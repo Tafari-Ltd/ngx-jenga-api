@@ -1,0 +1,8 @@
+mat-card {
+    width: inherit;
+}
+
+.user-form {
+    display: inline-grid;
+    padding: 30px;
+}

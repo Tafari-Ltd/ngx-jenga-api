@@ -1,0 +1,27 @@
+{
+    "name": "ngx-jenga-api",
+    "version": "0.0.3",
+    "description": "Angular wrapper for Equity's Jenga API. Still in progress",
+    "peerDependencies": {
+        "@angular/common": "^15.1.0",
+        "@angular/core": "^15.1.0"
+    },
+    "dependencies": {
+        "@angular/material": "^15.0.0",
+        "tslib": "^2.3.0"
+    },
+    "sideEffects": false,
+    "author": {
+        "name": "masi kibe"
+    },
+    "keywords": [
+        "equity bank",
+        "jenga api",
+        "payments",
+        "kenya",
+        "uganda",
+        "tanzania",
+        "rwanda",
+        "south sudan"
+    ]
+}

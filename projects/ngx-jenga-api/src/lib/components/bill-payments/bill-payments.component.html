@@ -1,0 +1,35 @@
+<mat-card [class.mat-elevation-z8]="cardShadow">
+    <form class="user-form" [formGroup]="billForm">
+
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+            <mat-error>Kindly add your name</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Account Number</mat-label>
+            <input matInput formControlName="reference">
+            <mat-error>Kindly add yur account number</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput formControlName="mobileNumber">
+            <mat-error>Kindly add a mobile number</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="form-field full-width" appearance="outline" class="example-full-width">
+            <mat-label>Leave a Remark</mat-label>
+            <textarea matInput formControlName="remarks"></textarea>
+            <mat-error>Kindly add a remark</mat-error>
+        </mat-form-field>
+        <br>
+
+        <button (click)="billPayments()" mat-raised-button color="primary">Make Payment</button>
+
+    </form>
+</mat-card>

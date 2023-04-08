@@ -1,0 +1,3 @@
+[submodule "projects/projects/ngx-jenga-ap"]
+	path = projects/projects/ngx-jenga-ap
+	url = https://github.com/kibetmasi/Jenga-s-Angular-library

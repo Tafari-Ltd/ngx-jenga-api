@@ -1,0 +1,28 @@
+<mat-card>
+    <form class="user-form" [formGroup]="merchantForm">
+
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Till number</mat-label>
+            <input matInput formControlName="till">
+            <mat-error>Kindly add the till number</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount">
+            <mat-error>Kindly add your amount</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput formControlName="mobileNumber">
+            <mat-error>Kindly add a mobile number</mat-error>
+        </mat-form-field>
+        <br>
+
+        <button [disabled]="!merchantForm.valid" (click)="merchantPayments()" mat-raised-button color="primary">Make Payment</button>
+
+    </form>
+</mat-card>

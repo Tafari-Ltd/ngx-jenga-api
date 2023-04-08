@@ -1,0 +1,46 @@
+<div class="table">
+    <div class="searchBar" *ngIf="showSearchBar">
+        <input (keyup)="applyFilter($event)" id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search {{ merchantList?.length }} merchants" />
+    </div>
+    <table mat-table [dataSource]="dataSource" matSort [class.mat-elevation-z8]="tableShadow">
+
+        <ng-container matColumnDef="name">
+            <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">Name</th>
+            <td mat-cell *matCellDef="let row"> {{ row.name }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tillNumber">
+            <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by tillNumber">Till Number</th>
+            <td mat-cell *matCellDef="let row"> {{ row.tillNumber }} </td>
+        </ng-container>
+
+
+        <!-- <ng-container matColumnDef="outlets">
+            <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by tillnumber">Outlets</th>
+
+            <td mat-cell *matCellDef="let row">
+                <table mat-table [dataSource]="row.outlets">
+
+                    <ng-container matColumnDef="Oname">
+                        <th class="sub-table" mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let row"> {{ row.name }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Otillnumber">
+                        <th class="sub-table" mat-header-cell *matHeaderCellDef>Till Number</th>
+                        <td mat-cell *matCellDef="let row"> {{ row.tillnumber }} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="['Oname', 'Otillnumber']" RowDef="['Oname', 'Otillnumber']"></tr>
+                    <tr mat-row *matRowDef="let row; columns: ['Oname', 'Otillnumber'];"></tr>
+                </table>
+            </td>
+        </ng-container> -->
+
+
+        <tr mat-header-row *matHeaderRowDef="['name', 'tillNumber']" RowDef="['name', 'tillNumber']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['name', 'tillNumber'];"></tr>
+    </table>
+    <mat-progress-bar *ngIf="loadingService.isLoading$ | async" mode="indeterminate"></mat-progress-bar>
+    <mat-paginator #paginator [pageSizeOptions]="[25, 50, 100]" showFirstLastButtons (page)="updatePageSize($event)"></mat-paginator>
+</div>
