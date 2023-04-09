@@ -1,27 +1,75 @@
-# JengaApi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+# Project Title
 
-## Development server
+An Angular library that abstracts the complexity of consuming Jenga APIs
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Documentation
 
-## Code scaffolding
+API reference: 
+[Documentation](https://developer.jengaapi.io/reference/welcome)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Get All EazzyPay Merchants
+- Get All Billers
+- Receive Payments - Bill Payments
+- Receive Payments - Merchant Payments
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Run in your project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install the library
 
-## Running end-to-end tests
+```bash
+  npm i ngx-jenga-api
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+In your `app.module.ts` or any module where the component or directive would be used like so:
 
-## Further help
+```ts
+  import { NgxJengaApiModule } from 'ngx-jenga-api';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  imports: [
+     NgxJengaApiModule.forRoot(
+      <merchant code>,
+      <consumer secret>,
+      <API key>
+    )
+  ]
+```
+
+Install dependencies
+
+```bash
+  ng add @angular/material
+```
+
+Implement in your application
+
+```html
+  <jenga-all-merchants></jenga-all-merchants> // Get All EazzyPay Merchants
+
+  <jenga-all-billers ></jenga-all-billers> // Get All Billers
+
+  <jenga-bill-payments></jenga-bill-payments> // Receive Payments - Bill Payments
+
+  <jenga-merchant-payments></jenga-merchant-payments> // Receive Payments - Merchant Payments
+```
+
+## API Reference
+
+For table  only
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `@Input(): showSearchBar` | `string` | enable search bar |
+| `@Input(): tableShadow` | `string` |  add box-shadow |
+
+
+
+
+
+
+
+
+s
