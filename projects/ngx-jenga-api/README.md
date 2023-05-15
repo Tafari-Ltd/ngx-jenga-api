@@ -1,12 +1,13 @@
 
-# Project Title
+# ngx-jenga-api
 
 An Angular library that abstracts the complexity of consuming Jenga APIs
 
 ## Documentation
+Before proceeding with the library, ensure you are familiar with Jenga APIs. See below for the docs.
 
-API reference: 
 [Documentation](https://developer.jengaapi.io/reference/welcome)
+
 
 ## Features
 
@@ -20,14 +21,18 @@ API reference:
 
 Install the library
 
-```bash
-  npm i ngx-jenga-api
-```
-
-In your `app.module.ts` or any module where the component or directive would be used like so:
 
 ```ts
-  import { NgxJengaApiModule } from 'ngx-jenga-api';
+npm i ngx-jenga-api
+```
+    
+
+In your ```app.module.ts``` or any module where the component or directive would be used like so:
+
+
+
+```ts
+import { NgxJengaApiModule } from 'ngx-jenga-api';
 
   imports: [
      NgxJengaApiModule.forRoot(
@@ -38,37 +43,88 @@ In your `app.module.ts` or any module where the component or directive would be 
   ]
 ```
 
-Install dependencies
+Install the dependencies
+
 
 ```bash
-  ng add @angular/material
-```
-
-Implement in your application
-
-```html
-  <jenga-all-merchants></jenga-all-merchants> // Get All EazzyPay Merchants
-
-  <jenga-all-billers ></jenga-all-billers> // Get All Billers
-
-  <jenga-bill-payments></jenga-bill-payments> // Receive Payments - Bill Payments
-
-  <jenga-merchant-payments></jenga-merchant-payments> // Receive Payments - Merchant Payments
+ng add @angular/material
 ```
 
 ## API Reference
 
-For table  only
+#### Receive Payments - Merchant Payments
 
-| Parameter | Type     | Description                |
+This API Provides Partners the Capability To Make Payments For Goods And Services
+
+
+
+```bash
+  <jenga-merchant-payments></jenga-merchant-payments>
+```
+
+| Parameter | Type     | Value                |
 | :-------- | :------- | :------------------------- |
-| `@Input(): showSearchBar` | `string` | enable search bar |
-| `@Input(): tableShadow` | `string` |  add box-shadow |
+| `till` | `string` | **Required**. `Undefined` |
+| `uniqueRef` | `string` | **Required**. `random 12 digit string` |
+| `amount` | `string` | **Required**. `Undefined` |
+| `currency` | `string` | **Required**. `KES` |
+| `bankId` | `string` | **Required**. `Undefined` |
+| `mobileNumber` | `string` | **Required**. `Undefined` |
+| `mobileNumber` | `string` | **Required**. `Undefined` |
+
+#### Receive Payments - Bill Payments
+This API Provides Partners the Capability To Initiate Utility Bill Payments For Goods And Services
+
+```html
+  <jenga-bill-payments></jenga-bill-payments>
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `billerCode`      | `string` | **Required**. `Undefined` |
+| `countryCode`      | `string` | **Required**. `Undefined` |
+| `reference`      | `string` | **Required**. `Undefined` |
+| `amount`      | `string` | **Required**. `Undefined` |
+| `currency`      | `string` | **Required**. `KES` |
+| `name`      | `string` | **Required**. `Undefined` |
+| `account`      | `string` | **Required**. `Undefined` |
+| `reference2`      | `string` | **Required**. `random 12 digit string` |
+| `partnerId`      | `string` | **Required**. `Undefined` |
+| `authorization`      | `string` | **Required**. `Undefined` |
+| `signature`      | `string` | **Required**. `Undefined` |
+| `mobileNumber`      | `string` | **Required**. `Undefined` |
+| `remarks`      | `string` | **Required**. `Undefined` |
+| `cardShadow`      | `boolean` | **Required**. `false` |
+
+#### Get All EazzyPay Merchants
+
+Returns all EazzyPay merchants.
+```html
+  <jenga-all-merchants></jenga-all-merchants>
+```
+
+| Parameter | Type     | Value                |
+| :-------- | :------- | :------------------------- |
+| `tableShadow` | `string` | **Required**. `true` |
+| `showSearchBar` | `string` | **Required**. `true` |
+
+#### Get All Billers
+
+Returns a paginated list of all billers
+```html
+  <jenga-all-merchants></jenga-all-merchants>
+```
+
+| Parameter | Type     | Value                |
+| :-------- | :------- | :------------------------- |
+| `tableShadow` | `string` | **Required**. `true` |
+| `showSearchBar` | `string` | **Required**. `true` |
+| `categories` | `string` | **Required**. `utilities` |
 
 
 
 
+## Tech Stack
 
-
-
+**Client:** Angular, Angular Material, SCSS
 

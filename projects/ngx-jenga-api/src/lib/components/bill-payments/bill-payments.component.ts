@@ -19,7 +19,7 @@ export class BillPaymentsComponent implements OnInit {
   @Input() countryCode!: string
   @Input() reference!: string
   @Input() amount!: string
-  @Input() currency!: string
+  @Input() currency: string = 'KES'
   @Input() name!: string
   @Input() account!: string
   @Input() reference2!: string

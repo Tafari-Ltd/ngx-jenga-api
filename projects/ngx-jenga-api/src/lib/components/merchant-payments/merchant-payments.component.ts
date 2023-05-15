@@ -18,9 +18,9 @@ export class MerchantPaymentsComponent implements OnInit, OnDestroy {
   paymentData!: IMerchantPayments
 
   @Input() till!: string
-  @Input() uniqueRef!: string
+  @Input() uniqueRef: string = this.general.generateRandomString(12)
   @Input() amount!: string
-  @Input() currency!: string
+  @Input() currency: string = 'KES'
   @Input() bankId!: string
   @Input() mobileNumber!: string
 
@@ -44,7 +44,7 @@ export class MerchantPaymentsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.merchantForm = this.formbuilder.group({
       till: [this.till, [Validators.required]],
-      uniqueRef: [this.general.generateRandomString(12), [Validators.required]],
+      uniqueRef: [this.uniqueRef, [Validators.required]],
       amount: [this.amount, [Validators.required]],
       currency: [this.currency, [Validators.required]],
       bankId: [this.bankId, [Validators.required]],
